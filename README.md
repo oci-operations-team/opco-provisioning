@@ -752,7 +752,7 @@ This automation provides the option to create a configurable number of monitorin
 
 
 
-As a consequence, for Nexi usecase, we'll create 2 categories of OCI Events and allocate them to 2 different compartments:
+As a consequence, for OPCO usecase, we'll create 2 categories of OCI Events and allocate them to 2 different compartments:
 
 - ```cmp-prod-<application_acronym>``` - OCI Events to monitor "*produdction*" resources.
 - ```cmp-stag-<application_acronym>``` - OCI Events to monitor only "*staging*" specific resources

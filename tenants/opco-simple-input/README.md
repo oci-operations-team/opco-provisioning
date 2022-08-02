@@ -1,4 +1,4 @@
-# Template for Nexi Application provisioning - complex input - manual template
+# Template for OPCO Application provisioning - simple input - manual template
 
 In order to provision a new application make a copy of this folder and rename it.
 
@@ -590,21 +590,21 @@ terraform init
 
 
 Initializing modules...
-- nexi-oci-app-provisioning.oci-iam-compartments in ../../../modules/oci-iam-compartments
-Downloading git::https://github.com/oracle-terraform-modules/terraform-oci-tdf-iam-compartments.git?ref=v0.2.4 for nexi-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments...
-- nexi-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments in .terraform/modules/nexi-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments
-- nexi-oci-app-provisioning.oci-monitoring in ../../../modules/oci-monitoring
-Downloading git::ssh://git@cosmindev.github.com/fsana/oci_terraform_events.git for nexi-oci-app-provisioning.oci-monitoring.oci_events...
-- nexi-oci-app-provisioning.oci-monitoring.oci_events in .terraform/modules/nexi-oci-app-provisioning.oci-monitoring.oci_events
-- nexi-oci-app-provisioning.oci-network-security in ../../../modules/oci-network-security
-Downloading git::https://github.com/oracle-terraform-modules/terraform-oci-tdf-network-security.git?ref=v0.9.7 for nexi-oci-app-provisioning.oci-network-security.oci_security_policies...
-- nexi-oci-app-provisioning.oci-network-security.oci_security_policies in .terraform/modules/nexi-oci-app-provisioning.oci-network-security.oci_security_policies
-- nexi-oci-app-provisioning.oci-prod-network in ../../../modules/oci-network
-Downloading git::https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart.git?ref=v2.3.1.0 for nexi-oci-app-provisioning.oci-prod-network.opco_vcns...
-- nexi-oci-app-provisioning.oci-prod-network.opco_vcns in .terraform/modules/nexi-oci-app-provisioning.oci-prod-network.opco_vcns/modules/network/vcn-basic
-- nexi-oci-app-provisioning.oci-stag-network in ../../../modules/oci-network
-Downloading git::https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart.git?ref=v2.3.1.0 for nexi-oci-app-provisioning.oci-stag-network.opco_vcns...
-- nexi-oci-app-provisioning.oci-stag-network.opco_vcns in .terraform/modules/nexi-oci-app-provisioning.oci-stag-network.opco_vcns/modules/network/vcn-basic
+- opco-oci-app-provisioning.oci-iam-compartments in ../../../modules/oci-iam-compartments
+Downloading git::https://github.com/oracle-terraform-modules/terraform-oci-tdf-iam-compartments.git?ref=v0.2.4 for opco-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments...
+- opco-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments in .terraform/modules/opco-oci-app-provisioning.oci-iam-compartments.oci_iam_compartments
+- opco-oci-app-provisioning.oci-monitoring in ../../../modules/oci-monitoring
+Downloading git::ssh://git@cosmindev.github.com/fsana/oci_terraform_events.git for opco-oci-app-provisioning.oci-monitoring.oci_events...
+- opco-oci-app-provisioning.oci-monitoring.oci_events in .terraform/modules/opco-oci-app-provisioning.oci-monitoring.oci_events
+- opco-oci-app-provisioning.oci-network-security in ../../../modules/oci-network-security
+Downloading git::https://github.com/oracle-terraform-modules/terraform-oci-tdf-network-security.git?ref=v0.9.7 for opco-oci-app-provisioning.oci-network-security.oci_security_policies...
+- opco-oci-app-provisioning.oci-network-security.oci_security_policies in .terraform/modules/opco-oci-app-provisioning.oci-network-security.oci_security_policies
+- opco-oci-app-provisioning.oci-prod-network in ../../../modules/oci-network
+Downloading git::https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart.git?ref=v2.3.1.0 for opco-oci-app-provisioning.oci-prod-network.opco_vcns...
+- opco-oci-app-provisioning.oci-prod-network.opco_vcns in .terraform/modules/opco-oci-app-provisioning.oci-prod-network.opco_vcns/modules/network/vcn-basic
+- opco-oci-app-provisioning.oci-stag-network in ../../../modules/oci-network
+Downloading git::https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart.git?ref=v2.3.1.0 for opco-oci-app-provisioning.oci-stag-network.opco_vcns...
+- opco-oci-app-provisioning.oci-stag-network.opco_vcns in .terraform/modules/opco-oci-app-provisioning.oci-stag-network.opco_vcns/modules/network/vcn-basic
 
 Initializing the backend...
 
@@ -644,7 +644,7 @@ We're exposing both versions as flat is easy to consume by other automations whe
 
 ## Terraform modules that are used by this project
 
-* ```../../../nexi-oci-app-provisioning``` 
+* ```../../../opco-oci-app-provisioning``` 
 
 * https://github.com/oracle-terraform-modules/terraform-oci-tdf-iam-compartments/tree/v0.2.4
 

@@ -30,9 +30,9 @@ locals {
   }
 }
 
-module "nexi-oci-app-provisioning" {
+module "opco-provisioning" {
 
-  source = "../../../"
+  source = "../../"
 
   providers = {
     oci.home = oci.home

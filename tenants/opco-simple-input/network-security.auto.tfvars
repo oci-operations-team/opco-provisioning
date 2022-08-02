@@ -3,22 +3,22 @@
 
 
 # Search and replace: 
-#     - <application_name> with your application name
-#     - <application_acronym> with your application acronym
+#     - opco with your application name
+#     - nd with your application acronym
 
 
 ### app network security
 app_network_sec_config = {
   # Prod Network Security
-  <application_name>_netsec_<application_acronym>prod01-vcn = {
-    default_compartment_name = "cmp-prod-<application_acronym>-nw",
-    vcn_name                 = "<application_acronym>prod01-vcn",
+  opco_netsec_prod01-vcn = {
+    default_compartment_name = "opco-s-prod",
+    vcn_name                 = "prod01-vcn",
     default_defined_tags     = null,
     default_freeform_tags    = null,
     security_lists           = {},
     nsgs = {
-      nsg_db_<application_name>_netsec_<application_acronym>prod01-vcn = {
-        compartment_name = "cmp-prod-<application_acronym>-nw"
+      nsg_db_opco_netsec_prod01-vcn = {
+        compartment_name = "opco-s-prod"
         defined_tags     = null,
         freeform_tags    = null,
         ingress_rules = [
@@ -26,7 +26,7 @@ app_network_sec_config = {
             description = "APP NSGs"
             stateless   = false
             protocol    = "6"
-            src         = "nsg_app_<application_name>_netsec_<application_acronym>prod01-vcn"
+            src         = "nsg_app_opco_netsec_prod01-vcn"
             src_type    = "NSG_NAME"
             src_port    = null
             dst_port = {
@@ -51,8 +51,8 @@ app_network_sec_config = {
           }
         ]
       },
-      nsg_app_<application_name>_netsec_<application_acronym>prod01-vcn = {
-        compartment_name = "cmp-prod-<application_acronym>-nw"
+      nsg_app_opco_netsec_prod01-vcn = {
+        compartment_name = "opco-s-prod"
         defined_tags     = null,
         freeform_tags    = null,
         ingress_rules = [
@@ -89,15 +89,15 @@ app_network_sec_config = {
   }
 
   # Stag Network Security
-  <application_name>_netsec_<application_acronym>stag01-vcn = {
-    default_compartment_name = "cmp-prod-<application_acronym>-nw",
-    vcn_name                 = "<application_acronym>stag01-vcn",
+  opco_netsec_stag01-vcn = {
+    default_compartment_name = "opco-s-stag",
+    vcn_name                 = "stag01-vcn",
     default_defined_tags     = null,
     default_freeform_tags    = null,
     security_lists           = {},
     nsgs = {
-      nsg_db_<application_name>_netsec_<application_acronym>stag01-vcn = {
-        compartment_name = "cmp-stag-<application_acronym>-nw"
+      nsg_db_opco_netsec_stag01-vcn = {
+        compartment_name = "opco-s-stag"
         defined_tags     = null,
         freeform_tags    = null,
         ingress_rules = [
@@ -105,7 +105,7 @@ app_network_sec_config = {
             description = "APP NSGs"
             stateless   = false
             protocol    = "6"
-            src         = "nsg_app_<application_name>_netsec_<application_acronym>stag01-vcn"
+            src         = "nsg_app_opco_netsec_stag01-vcn"
             src_type    = "NSG_NAME"
             src_port    = null
             dst_port = {
@@ -130,8 +130,8 @@ app_network_sec_config = {
           }
         ]
       },
-      nsg_app_<application_name>_netsec_<application_acronym>stag01-vcn = {
-        compartment_name = "cmp-stag-<application_acronym>-nw"
+      nsg_app_opco_netsec_stag01-vcn = {
+        compartment_name = "opco-s-stag"
         defined_tags     = null,
         freeform_tags    = null,
         ingress_rules = [

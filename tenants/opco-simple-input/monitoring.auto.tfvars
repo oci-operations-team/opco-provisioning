@@ -2,13 +2,13 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 # Search and replace: 
-#     - <application_acronym> with your application acronym
-#     - <ocid-stream-ocid> with your OCI Stream OCID - Example: "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
+#     - nd with your application acronym
+#     - ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq with your OCI Stream OCID - Example: "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
 
 
 
 event_rules = {
-  default_compartment_name = "cmp-prod-<application_acronym>"
+  default_compartment_name = "opco-s-prod"
   event_rules = {
     # Production Resources Monitoring
     rule_prod_vcn_create = {
@@ -17,10 +17,10 @@ event_rules = {
         description = "Write event data on Streaming Service"
         function_id = null
         is_enabled  = true
-        stream_id   = "<ocid-stream-ocid>"
+        stream_id   = "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
         topic_id    = null
       }]
-      compartment_name = "cmp-prod-<application_acronym>"
+      compartment_name = "opco-s-prod"
       condition        = "{\"eventType\": \"com.oraclecloud.virtualnetwork.createvcn\"}"
       description      = "Test Event Rule - Prod VCN Create"
       is_enabled       = true
@@ -31,10 +31,10 @@ event_rules = {
         description = "Write event data on Streaming Service"
         function_id = null
         is_enabled  = true
-        stream_id   = "<ocid-stream-ocid>"
+        stream_id   = "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
         topic_id    = null
       }]
-      compartment_name = "cmp-prod-<application_acronym>"
+      compartment_name = "opco-s-prod"
       condition        = "{\"eventType\": \"com.oraclecloud.virtualnetwork.updatevcn\"}"
       description      = "Test Event Rule - Prod VCN Update"
       is_enabled       = true
@@ -47,10 +47,10 @@ event_rules = {
         description = "Write event data on Streaming Service"
         function_id = null
         is_enabled  = true
-        stream_id   = "<ocid-stream-ocid>"
+        stream_id   = "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
         topic_id    = null
       }]
-      compartment_name = "cmp-stag-<application_acronym>"
+      compartment_name = "opco-s-stag"
       condition        = "{\"eventType\": \"com.oraclecloud.virtualnetwork.createvcn\"}"
       description      = "Test Event Rule - Stag VCN Create"
       is_enabled       = true
@@ -61,10 +61,10 @@ event_rules = {
         description = "Write event data on Streaming Service"
         function_id = null
         is_enabled  = true
-        stream_id   = "<ocid-stream-ocid>"
+        stream_id   = "ocid1.stream.oc1.uk-london-1.amaaaaaattkvkkiajfuvg7wv4fluyj7ye57duaah5axqmnxdkqg4xadbatrq"
         topic_id    = null
       }]
-      compartment_name = "cmp-stag-<application_acronym>"
+      compartment_name = "opco-s-stag"
       condition        = "{\"eventType\": \"com.oraclecloud.virtualnetwork.updatevcn\"}"
       description      = "Test Event Rule - Stag VCN Update"
       is_enabled       = true

@@ -15,7 +15,7 @@ app_compartments_config = {
   compartments = {
 
     # Production Compartments
-    opco-prod = {
+    opco-c-prod = {
       description      = "Compartment holding production resources of opco application"
       compartment_id   = "ocid1.compartment.oc1..aaaaaaaawwhpzd5kxd7dcd56kiuuxeaa46icb44cnu7osq3mbclo2pnv3dpq"
       defined_tags     = null
@@ -25,7 +25,7 @@ app_compartments_config = {
     }
 
     # Staging Compartments
-    opco-stag = {
+    opco-c-stag = {
       description      = "Compartment holding staging resources of opco application"
       compartment_id   = "ocid1.compartment.oc1..aaaaaaaawwhpzd5kxd7dcd56kiuuxeaa46icb44cnu7osq3mbclo2pnv3dpq"
       defined_tags     = null

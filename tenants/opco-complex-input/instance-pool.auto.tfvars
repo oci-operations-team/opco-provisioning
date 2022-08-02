@@ -34,12 +34,12 @@ instance_pool_config = {
 instance_pool_config = {
   # production instance pool
   instance_pool_prod = {
-    default_compartment_name = "opco-prod"
+    default_compartment_name = "opco-c-prod"
     default_defined_tags     = {}
     default_freeform_tags    = null
 
     instance_pool = {
-      compartment_name = "opco-prod"
+      compartment_name = "opco-c-prod"
       size             = 2
       defined_tags     = {}
       freeform_tags    = null
@@ -74,7 +74,7 @@ instance_pool_config = {
 
       instance_configuration = {
         # required
-        compartment_name = "opco-prod"
+        compartment_name = "opco-c-prod"
 
         #optional 
         defined_tags  = {}
@@ -103,7 +103,7 @@ instance_pool_config = {
             # optional
             capacity_reservation_id = null
             # optional
-            compartment_name = "opco-prod"
+            compartment_name = "opco-c-prod"
             # optional
             dedicated_vm_host_id = null
             # optional
@@ -197,7 +197,7 @@ instance_pool_config = {
           type = "instancePool"
         }
         # required
-        compartment_name = "opco-prod"
+        compartment_name = "opco-c-prod"
 
         #Optional
         cool_down_in_seconds = 300
@@ -293,12 +293,12 @@ instance_pool_config = {
 
   # staging instance pool
   instance_pool_stag = {
-    default_compartment_name = "opco-stag"
+    default_compartment_name = "opco-c-stag"
     default_defined_tags     = {}
     default_freeform_tags    = null
 
     instance_pool = {
-      compartment_name = "opco-stag"
+      compartment_name = "opco-c-stag"
       size             = 2
       defined_tags     = {}
       freeform_tags    = null
@@ -333,7 +333,7 @@ instance_pool_config = {
 
       instance_configuration = {
         # required
-        compartment_name = "opco-stag"
+        compartment_name = "opco-c-stag"
 
         #optional 
         defined_tags  = {}
@@ -362,7 +362,7 @@ instance_pool_config = {
             # optional
             capacity_reservation_id = null
             # optional
-            compartment_name = "opco-stag"
+            compartment_name = "opco-c-stag"
             # optional
             dedicated_vm_host_id = null
             # optional
@@ -456,7 +456,7 @@ instance_pool_config = {
           type = "instancePool"
         }
         # required
-        compartment_name = "opco-stag"
+        compartment_name = "opco-c-stag"
 
         #Optional
         cool_down_in_seconds = 300

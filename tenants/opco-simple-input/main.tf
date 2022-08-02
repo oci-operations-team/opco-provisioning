@@ -30,9 +30,9 @@ locals {
   }
 }
 
-module "nexi-oci-app-provisioning" {
+module "opco-provisioning" {
 
-  source = "../../../"
+  source = "../../"
 
   providers = {
     oci.home = oci.home
@@ -46,4 +46,8 @@ module "nexi-oci-app-provisioning" {
   event_rules = var.event_rules
 
   app_network_sec_config = var.app_network_sec_config
+
+  load_balancer_config = var.load_balancer_config
+
+  instance_pool_config = var.instance_pool_config
 }

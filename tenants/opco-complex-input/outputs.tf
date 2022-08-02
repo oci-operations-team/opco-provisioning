@@ -11,7 +11,7 @@
 output "app_config" {
   description = "app_config:"
   value = {
-    config      = module.nexi-oci-app-provisioning.oci_app_details,
+    config      = module.opco-provisioning.oci_app_details,
     home_region = [for i in data.oci_identity_region_subscriptions.this.region_subscriptions : i.region_name if i.is_home_region == true][0]
   }
 }
@@ -22,7 +22,7 @@ output "app_config" {
 output "app_config_flat" {
   description = "app_config_flat:"
   value = {
-    config      = module.nexi-oci-app-provisioning.oci_app_details_flat,
+    config      = module.opco-provisioning.oci_app_details_flat,
     home_region = [for i in data.oci_identity_region_subscriptions.this.region_subscriptions : i.region_name if i.is_home_region == true][0]
   }
 }

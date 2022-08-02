@@ -127,7 +127,7 @@ locals {
     default_freeform_tags  = var.load_balancer_config.prod_lb.default_freeform_tags
 
 
-    lb_options = {
+    lb_options = var.load_balancer_config.prod_lb.lb_options != null ? {
       display_name   = var.load_balancer_config.prod_lb.lb_options.display_name
       compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.load_balancer_config.prod_lb.default_compartment_name, local.aux).id
       shape          = var.load_balancer_config.prod_lb.lb_options.shape
@@ -145,7 +145,7 @@ locals {
       defined_tags  = var.load_balancer_config.prod_lb.lb_options.defined_tags
       freeform_tags = var.load_balancer_config.prod_lb.lb_options.freeform_tags
 
-    }
+    } : null
 
     health_checks = var.load_balancer_config.prod_lb.health_checks
 
@@ -165,7 +165,7 @@ locals {
     default_freeform_tags  = var.load_balancer_config.stag_lb.default_freeform_tags
 
 
-    lb_options = {
+    lb_options = var.load_balancer_config.stag_lb.lb_options != null ? {
       display_name   = var.load_balancer_config.stag_lb.lb_options.display_name
       compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.load_balancer_config.stag_lb.default_compartment_name, local.aux).id
       shape          = var.load_balancer_config.stag_lb.lb_options.shape
@@ -183,7 +183,7 @@ locals {
       defined_tags  = var.load_balancer_config.stag_lb.lb_options.defined_tags
       freeform_tags = var.load_balancer_config.stag_lb.lb_options.freeform_tags
 
-    }
+    } : null
 
     health_checks = var.load_balancer_config.stag_lb.health_checks
 

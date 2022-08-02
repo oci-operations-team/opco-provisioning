@@ -2,15 +2,42 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 
+load_balancer_config = {
+  prod_lb = {
+    default_compartment_name = "opco-s-prod"
+    default_defined_tags     = {}
+    default_freeform_tags    = null
 
+    lb_options      = null
+    health_checks   = {}
+    backend_sets    = {}
+    path_route_sets = {}
+    rule_sets = {}
+    listeners = {}
+  }
+  
+  stag_lb = {
+    default_compartment_name = "opco-s-stag"
+    default_defined_tags     = {}
+    default_freeform_tags    = null
 
+    lb_options      = null
+    health_checks   = {}
+    backend_sets    = {}
+    path_route_sets = {}
+    rule_sets = {}
+    listeners = {}
 
+  }
+}
+
+/*
 load_balancer_config = {
 
   # production lb
   prod_lb = {
     # the default attributes are used across the complex type for the default values of all the recurent compartment_id, defined_tags and freeform_tags attributes
-    default_compartment_name = "opco-prod"
+    default_compartment_name = "opco-s-prod"
     default_defined_tags     = {}
     default_freeform_tags    = null
 
@@ -83,7 +110,7 @@ load_balancer_config = {
   # staging lb
   stag_lb = {
     # the default attributes are used across the complex type for the default values of all the recurent compartment_id, defined_tags and freeform_tags attributes
-    default_compartment_name = "opco-stag"
+    default_compartment_name = "opco-s-stag"
     default_defined_tags     = {}
     default_freeform_tags    = null
 
@@ -153,3 +180,4 @@ load_balancer_config = {
     }
   }
 }
+*/
