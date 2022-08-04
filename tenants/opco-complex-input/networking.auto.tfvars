@@ -5,7 +5,7 @@
 #     - opco with your application name
 #     - nd with your application acronym
 
-networking = {
+networking_config = {
 
   # PROD VCNs
   prod_networking = {

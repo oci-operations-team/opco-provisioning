@@ -8,7 +8,7 @@
 
 # Compartments config Variable
 
-app_compartments_config = {
+compartments_config = {
   default_compartment_id = "ocid1.compartment.oc1..aaaaaaaawwhpzd5kxd7dcd56kiuuxeaa46icb44cnu7osq3mbclo2pnv3dpq"
   default_defined_tags   = {}
   default_freeform_tags  = null

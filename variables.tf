@@ -1,7 +1,7 @@
 
 # Compartments Config Variable
 
-variable "app_compartments_config" {
+variable "compartments_config" {
   type = object({
     default_compartment_id = string,
     default_defined_tags   = map(string),
@@ -48,7 +48,7 @@ variable "app_compartments_config" {
 }
 
 
-variable "networking" {
+variable "networking_config" {
   description = "The VCNs."
   type = object({
     prod_networking = object({

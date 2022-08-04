@@ -13,18 +13,18 @@ locals {
 
   networking = {
     prod_networking = {
-      default_network_compartment_name = var.networking.prod_networking.default_network_compartment_name
-      service_label                    = var.networking.prod_networking.service_label
-      service_gateway_cidr             = local.valid_service_gateway_cidrs[var.networking.prod_networking.service_gateway_cidr]
-      drg_id                           = var.networking.prod_networking.drg_id
-      vcns                             = var.networking.prod_networking.vcns
+      default_network_compartment_name = var.networking_config.prod_networking.default_network_compartment_name
+      service_label                    = var.networking_config.prod_networking.service_label
+      service_gateway_cidr             = local.valid_service_gateway_cidrs[var.networking_config.prod_networking.service_gateway_cidr]
+      drg_id                           = var.networking_config.prod_networking.drg_id
+      vcns                             = var.networking_config.prod_networking.vcns
     }
     stag_networking = {
-      default_network_compartment_name = var.networking.stag_networking.default_network_compartment_name
-      service_label                    = var.networking.stag_networking.service_label
-      service_gateway_cidr             = local.valid_service_gateway_cidrs[var.networking.stag_networking.service_gateway_cidr]
-      drg_id                           = var.networking.stag_networking.drg_id
-      vcns                             = var.networking.stag_networking.vcns
+      default_network_compartment_name = var.networking_config.stag_networking.default_network_compartment_name
+      service_label                    = var.networking_config.stag_networking.service_label
+      service_gateway_cidr             = local.valid_service_gateway_cidrs[var.networking_config.stag_networking.service_gateway_cidr]
+      drg_id                           = var.networking_config.stag_networking.drg_id
+      vcns                             = var.networking_config.stag_networking.vcns
     }
 
   }
@@ -39,9 +39,9 @@ module "opco-provisioning" {
     oci      = oci
   }
 
-  app_compartments_config = var.app_compartments_config
+  compartments_config = var.compartments_config
 
-  networking = local.networking
+  networking_config = local.networking
 
   event_rules = var.event_rules
 

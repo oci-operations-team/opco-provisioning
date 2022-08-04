@@ -1,10 +1,12 @@
 # Multitenant environment provisioning on Oracle Cloud Infrastructure (OCI)
 
-This terraform module provides a terraform automation for provisioning a multitenant environment on Oracle Cloud Infrastructure.
+This terraform module provides a terraform automation for provisioning a multitenant environment on Oracle Cloud Infrastructure. 
 
-It supports a highly configurable input set of parameters for provisioning the tenants topology for IAM Compartments, Networking and native Monitoring by leveraging OCI events. 
+It expects to be provisioned on top of a foundation infrastructure layer which might be deployed either manually or by using existing automations like the [OCI Enterprise Landing Zone](ttps://github.com/oracle-quickstart/oci-enterprise-scale-baseline-landing-zone).
 
-The input parameters, by using `*.auto.tfvars`, support almost any compartments and networking topology configuration without the need for the user to touch the `*.tf` files.
+It supports a highly configurable input set of parameters for provisioning the tenants topology for IAM Compartments, Networking, Instance Pools(Compute), Load Balancers and native OCI Monitoring. 
+
+The input parameters, by using `*.auto.tfvars`, support almost any compartments, networking, compute and load balancer topology configuration without the need for the user to touch the `*.tf` files.
 
 ## Provisioned layers
 
@@ -25,7 +27,7 @@ Bellow you can see a 4 layers compartments structure out of which, as part of th
 To provision such a topology, the needed input in the ```iam.auto.tfvars``` is:
 
 ```
-app_compartments_config = {
+compartments_config = {
   default_compartment_id = "<parent_compartment_ocid>"
   default_defined_tags   = {}
   default_freeform_tags  = null
@@ -86,10 +88,10 @@ app_compartments_config = {
 
 As one can notice the only file that needs to be editated in ```*.auto.tfvars``` and not a ```*.tf``` file.
 
-Concerning the ```app_compartments_config``` variable definition, this is how it looks like:
+Concerning the ```compartments_config``` variable definition, this is how it looks like:
 
 ```
-variable "app_compartments_config" {
+variable "compartments_config" {
   type = object({
     default_compartment_id = string,
     default_defined_tags   = map(string),
@@ -229,7 +231,7 @@ For each category you'll be able to define the follow:
 Concerning the ```networking``` variable definition, this is how it looks like:
 
 ```
-variable "networking" {
+variable "networking_config" {
   description = "The VCNs."
   type = object({
     prod_networking = object({
@@ -364,7 +366,7 @@ I'll demonstrate how it can be defined in the ```networking.auto.tfvars``` a net
 One will just need to edit the ```networking.auto.tfvars``` and not a ```*.tf``` file and provide the following configuration in order to obtain the network topology from the above diagram:
 
 ```
-networking = {
+networking_config = {
 
   # PROD VCNs
   prod_networking = {

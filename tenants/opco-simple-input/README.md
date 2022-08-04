@@ -53,7 +53,7 @@ Edit the ```iam.auto.tfvars```:
 
 # Compartments config Variable
 
-app_compartments_config = {
+compartments_config = {
   default_compartment_id = "<parent_compartment_ocid>"
   default_defined_tags   = {}
   default_freeform_tags  = null
@@ -144,7 +144,7 @@ Edit the ```networking.auto.tfvars``` file:
 #     - <application_name> with your application name
 #     - <application_acronym> with your application acronym
 
-networking = {
+networking_config = {
 
   # PROD VCNs
   prod_networking = {

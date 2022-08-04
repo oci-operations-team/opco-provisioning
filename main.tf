@@ -7,7 +7,7 @@ locals {
   }
 
   non_poc_vcns = {
-    for k, v in var.networking.prod_networking.vcns : k => {
+    for k, v in var.networking_config.prod_networking.vcns : k => {
       compartment_id    = lookup(module.oci-iam-compartments.compartments_config_flat, v.compartment_name, local.aux).id
       cidr              = v.cidr,
       dns_label         = v.dns_label,
@@ -32,15 +32,15 @@ locals {
     }
   }
   prod_networking = {
-    default_network_compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.networking.prod_networking.default_network_compartment_name, local.aux).id
-    service_label                  = var.networking.prod_networking.service_label
-    service_gateway_cidr           = var.networking.prod_networking.service_gateway_cidr
-    drg_id                         = var.networking.prod_networking.drg_id
+    default_network_compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.networking_config.prod_networking.default_network_compartment_name, local.aux).id
+    service_label                  = var.networking_config.prod_networking.service_label
+    service_gateway_cidr           = var.networking_config.prod_networking.service_gateway_cidr
+    drg_id                         = var.networking_config.prod_networking.drg_id
     vcns                           = local.non_poc_vcns
   }
 
   poc_vcns = {
-    for k, v in var.networking.stag_networking.vcns : k => {
+    for k, v in var.networking_config.stag_networking.vcns : k => {
       compartment_id    = lookup(module.oci-iam-compartments.compartments_config_flat, v.compartment_name, local.aux).id
       cidr              = v.cidr,
       dns_label         = v.dns_label,
@@ -66,10 +66,10 @@ locals {
   }
 
   stag_networking = {
-    default_network_compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.networking.stag_networking.default_network_compartment_name, local.aux).id
-    service_label                  = var.networking.stag_networking.service_label
-    service_gateway_cidr           = var.networking.stag_networking.service_gateway_cidr
-    drg_id                         = var.networking.stag_networking.drg_id
+    default_network_compartment_id = lookup(module.oci-iam-compartments.compartments_config_flat, var.networking_config.stag_networking.default_network_compartment_name, local.aux).id
+    service_label                  = var.networking_config.stag_networking.service_label
+    service_gateway_cidr           = var.networking_config.stag_networking.service_gateway_cidr
+    drg_id                         = var.networking_config.stag_networking.drg_id
     vcns                           = local.poc_vcns
   }
 
@@ -674,7 +674,7 @@ module "oci-iam-compartments" {
     oci.home = oci.home
   }
 
-  compartments_config = var.app_compartments_config
+  compartments_config = var.compartments_config
 }
 
 module "oci-prod-network" {
