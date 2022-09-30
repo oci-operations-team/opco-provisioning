@@ -4,7 +4,7 @@
 
 module "instance_pool_module" {
 
-  source = "git@github.com:cosmindev/terraform-oci-tdf-instance-pool.git"
+  source = "github.com/oci-operations-team/terraform-oci-tdf-instance-poo?ref=v0.1"
 
   instance_pool_config = var.instance_pool_config
 }
