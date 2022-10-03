@@ -4,7 +4,7 @@
 
 module "oci_events" {
 
-  source = "git@cosmindev.github.com:fsana/oci_terraform_events.git"
+  source = "github.com/fsana/oci_terraform_events"
 
   default_compartment_id = var.default_compartment_id
   event_rules            = var.event_rules
